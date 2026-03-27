@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: preface
+parts:
+  - caption: CEOS-ARD Discovery Guide
+    chapters:
+    - file: ard/introduction
+    - file: ard/objectives
+    - file: ard/prerequisites
+    - file: ard/best_practices
+    - file: references
