@@ -48,6 +48,6 @@ The following acronyms are used in addition to the acronyms defined in the [CEOS
 |  ARD |  Analysis Ready Data  |
 |  CDA |  Connected Data Assets  |
 |  DGIWG |  Defence Geospatial Information Working Group  |
-|  DPS |  (DGIWG Data Product Specifications  |
+|  DPS |  (DGIWG) Data Product Specifications  |
 |  INSPIRE |  Infrastructure for Spatial Information in Europe  |
 |  PFS |  Product Family Specification  |
