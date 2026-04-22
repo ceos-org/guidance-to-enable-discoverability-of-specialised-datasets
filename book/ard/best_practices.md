@@ -792,7 +792,6 @@ TBD
 ### UMM-JSON Encoding
 
 This section describes best practices for UMM-JSON {cite}`umm_json` collection metadata encoding.
-TBD
 
 > **Example: 6.1**  
 >  Documenting conformance with specification or conformance class in UMM-JSON metadata.
@@ -801,7 +800,98 @@ TBD
 > **Example: 6.3**  
 >  Documenting conformance with specification in UMM-JSON {cite}`umm_json` metadata (with keywords).
 
-
+```json
+{
+	"MetadataSpecification": {
+		"URL": "https://cdn.earthdata.nasa.gov/umm/collection/v1.18.6",
+		"Name": "UMM-C",
+		"Version": "1.18.6"
+	},
+	"ProcessingLevel": {
+		"Id": "2"
+	},
+	"CollectionProgress": "COMPLETE",
+	"DOI": {
+		"DOI": "NA"
+	},
+	"ShortName": "novasar_l2ard_hh_hv",
+	"Version": "1",
+	"EntryTitle": "NovaSAR-1 CEOS-ARD (level 2) HH,HV polarizations",
+	"Abstract": "NovaSAR-1 CEOS-ARD (level 2) HH,HV polarizations",
+	"DataLanguage": "eng",
+	"DataDates": [
+		{
+			"Date": "2026-04-22T00:00:00.000Z",
+			"Type": "CREATE"
+		}
+	],
+	"ScienceKeywords": [
+		{
+			"Category": "EARTH SCIENCE",
+			"Topic": "SPECTRAL/ENGINEERING",
+			"Term": "VISIBLE WAVELENGTHS"
+		}
+	],
+	"SpatialExtent": {
+		"GranuleSpatialRepresentation": "NO_SPATIAL",
+		"HorizontalSpatialDomain": {
+			"Geometry": {
+				"CoordinateSystem": "CARTESIAN",
+				"BoundingRectangles": [
+					{
+						"WestBoundingCoordinate": -62.87262834116111,
+						"NorthBoundingCoordinate": 38.42053289934906,
+						"EastBoundingCoordinate": 173.246741777445,
+						"SouthBoundingCoordinate": -55.94470669421993
+					}
+				]
+			}
+		}
+	},
+	"TemporalExtents": [
+		{
+			"RangeDateTimes": [
+				{
+					"BeginningDateTime": "2019-11-02T02:32:55.000Z",
+					"EndingDateTime": "2025-10-08T12:05:22.999Z"
+				}
+			]
+		}
+	],
+	"DataCenters": [
+		{
+			"ShortName": "CSIRO",
+			"Roles": [
+				"DISTRIBUTOR"
+			]
+		}
+	],
+	"Platforms": [
+		{
+			"ShortName": "NOVASAR-1",
+			"Instruments": [
+				{
+					"ShortName": "s-band sar"
+				}
+			]
+		}
+	],
+	"AdditionalAttributes": [
+		{
+			"Value": "https://ceos.org/ard/metadata-codelists/PFS/NRB/5.5",
+			"Name": "https://ceos.org/ard/metadata-codelists/PFS",
+			"Description": "CEOS-ARD Product Family Specification",
+			"DataType": "STRING"
+		},
+		{
+			"Value": "https://ceos.org/ard/metadata-codelists/PFS/NRB",
+			"Name": "https://ceos.org/ard/metadata-codelists/PFS",
+			"Description": "CEOS-ARD Product Family Specification",
+			"DataType": "STRING"
+		}
+	]
+}
+```
 
 ### GeoDCAT-AP Encoding
 
