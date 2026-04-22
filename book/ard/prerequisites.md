@@ -68,72 +68,27 @@ Metadata encoding shall use citation elements for CEOS-ARD PFS such as document 
 
 ## Requirements for Keywords
 
-An alternative lightweight approach consists in including controlled keywords in the collection metadata to categorize the colections according to 
+The lightweight approach consists in including controlled keywords in the collection metadata to categorize the colections according to 
 CEOS-ARD Product Family.  This approach is not suitable to express compliance with individual conformance classes however.
 
-The following controlled keywords are proposed and may be discoverable in the future via the publication of an `https://ceos.org/ard/resources/codelists.xml` document.  This approach mimics the way ISO publishes codelists, e.g. https://standards.iso.org/iso/19139/resources/gmxCodelists.xml.
+| Specification Title | Version |  Keyword  | Keyword (URI)
+|------|-----|-----|-----|
+| CEOS-ARD Product Family Specification: Surface Reflectance          | Any   | Surface Reflectance | `https://ceos.org/ard/metadata-codelists/PFS/SR`  |
+| CEOS-ARD Product Family Specification: Surface Reflectance          | 5.0   | Surface Reflectance 5.0 | `https://ceos.org/ard/metadata-codelists/PFS/SR/5.0`  |
+| CEOS-ARD Product Family Specification: Normalised Radar Backscatter | Any   | Normalised Radar Backscatter | `https://ceos.org/ard/metadata-codelists/PFS/NRB` | 
+| CEOS-ARD Product Family Specification: Normalised Radar Backscatter | 5.5   | Normalised Radar Backscatter 5.5 | `https://ceos.org/ard/metadata-codelists/PFS/NRB/5.5` | 
 
 
-```xml
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 2026-01-30 -->
-<CT_CodelistCatalogue 
-    xmlns="http://www.isotc211.org/2005/gmx" 
-    xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml/3.2" 
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://www.isotc211.org/2005/gmx http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd http://www.isotc211.org/2005/gco http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd http://www.opengis.net/gml/3.2 http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19136_Schemas/gml.xsd http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd">
-	<!--=====Catalogue description=====-->
-	<name>
-		<gco:CharacterString>ardCodelists</gco:CharacterString>
-	</name>
-	<scope>
-		<gco:CharacterString>Codelists for description of metadata datasets compliant with CEOS-ARD Froduct Family Specifications</gco:CharacterString>
-	</scope>
-	<fieldOfApplication>
-		<gco:CharacterString>CEOS-ARD</gco:CharacterString>
-	</fieldOfApplication>
-	<versionNumber>
-		<gco:CharacterString>0.0</gco:CharacterString>
-	</versionNumber>
-	<versionDate>
-		<gco:Date>2026-01-30</gco:Date>
-	</versionDate>
-
-	<!--============================= Codelists =======================================-->
-	<codelistItem>
-		<CodeListDictionary gml:id="ARD_PFSCode">
-			<gml:description>Product Family Specification</gml:description>
-			<gml:identifier codeSpace="CEOS/ARD">ARD_PFSCode</gml:identifier>
-			<codeEntry>
-				<CodeDefinition gml:id="ARD_PFSCode_NRB">
-					<gml:description>Normalised Radar Backscatter</gml:description>
-					<gml:identifier codeSpace="CEOS/ARD">NRB</gml:identifier>
-				</CodeDefinition>
-			</codeEntry>
-			<codeEntry>
-				<CodeDefinition gml:id="ARD_PFSCode_SR">
-					<gml:description>Surface Reflectance</gml:description>
-					<gml:identifier codeSpace="CEOS/ARD">SR</gml:identifier>
-				</CodeDefinition>
-			</codeEntry>
-		</CodeListDictionary>
-	</codelistItem>
-	<!--=== EOF ===-->
-</CT_CodelistCatalogue>
-
+```{warning}
+Whether the keyword URI and specification URI can be identical is still to be agreed.
 ```
 
-The disadvantage of this approach is that it does not provide a URL for each individual CodeDefinition.
-Therefore, we propose the alternative approach also, used by INSPIRE (See example Codelist at https://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity).  Items then have individual URI like this: https://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/conformant.
+Controlled keywords are proposed that will be discoverable in the future via their online publication.
+We propose the approach  used by INSPIRE (See example Codelist at https://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity).  Items have individual URI like this: https://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/conformant.  For this INSPIRE example, values are then available in multiple formats (XML Registry, XML ISO 19135, RDF/XML, JSON etc.) at paths such as `https://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/DegreeOfConformity.en.rdf`.
 
-For this example, values are then available in multiple formats (XML Registry, XML ISO 19135, RDF/XML, JSON etc.) at paths such as
+CEOS will publish and maintain a similar RDF/XML file with the available keywords and keyword URI.  The update of list of URI is expected to become part of the approval process for a new or updated PFS.
 
-https://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/DegreeOfConformity.en.rdf
-
-CEOS might publish a similar RDF/XML file with the required SKOS concepts...
-
-E.g. `https://ceos.org/ard/metadata-codelists/PFS/PFS.rdf` document. 
+E.g. `https://ceos.org/ard/metadata-codelists/PFS/PFS.rdf` document (The exact online URL is still TBD). 
 
 ```xml
 <?xml version='1.0' encoding='utf-8'?>
@@ -145,27 +100,65 @@ E.g. `https://ceos.org/ard/metadata-codelists/PFS/PFS.rdf` document.
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
          xmlns:dct="http://purl.org/dc/terms/">
 
-	<rdf:Description rdf:about="https://ceos.org/ard/metadata-codelists/PFS">
+	<skos:Concept rdf:about="https://ceos.org/ard/metadata-codelists/PFS">
 		<skos:prefLabel xml:lang="en">Product Family Specification</skos:prefLabel>
-	</rdf:Description>
+		<rdfs:seeAlso rdf:resource="https://ceos.org/ard/index.html#specs"/>
+	</skos:Concept>
 
-	<rdf:Description rdf:about="https://ceos.org/ard/metadata-codelists/PFS/SR">
-		<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-		<skos:inScheme rdf:resource="https://ceos.org/ard/metadata-codelists/PFS"/>
-		<skos:topConceptOf rdf:resource="https://ceos.org/ard/metadata-codelists/PFS"/>
+	<skos:Concept rdf:about="https://ceos.org/ard/metadata-codelists/PFS/SR">
+		<skos:inScheme rdf:resource="https://ceos.org/ard/concepts/concept_scheme/PFS"/>
 		<skos:prefLabel xml:lang="en">Surface Reflectance</skos:prefLabel>
-		<skos:definition xml:lang="en">The Surface Reflectance Product Family ...</skos:definition>
+		<skos:notation xml:lang="en">SR</skos:notation>
+		<skos:definition xml:lang="en">The Surface Reflectance Product Family Specification ...</skos:definition>
 		<skos:broader rdf:resource="https://ceos.org/ard/metadata-codelists/PFS"/>
-	</rdf:Description>
+	</skos:Concept>
+	
+	<skos:Concept rdf:about="https://ceos.org/ard/metadata-codelists/PFS/SR/5.0">
+	    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+		<skos:inScheme rdf:resource="https://ceos.org/ard/concepts/concept_scheme/PFS"/>
+		<skos:prefLabel xml:lang="en">Surface Reflectance 5.0</skos:prefLabel>
+		<skos:definition xml:lang="en">The Surface Reflectance Product Family Specification ...</skos:definition>
+		<skos:broader rdf:resource="https://ceos.org/ard/metadata-codelists/PFS/SR"/>
+		<rdfs:isDefinedBy rdf:resource="https://ceos.org/ard/files/PFS/SR/v5.0/CARD4L_Product_Family_Specification_Surface_Reflectance-v5.0.pdf"/>
+		<rdfs:seeAlso rdf:resource="https://ceos.org/ard/files/PFS/SR/v5.0/CARD4L_Product_Family_Specification_Surface_Reflectance-v5.0.pdf"/>
+	</skos:Concept>
 
-    <rdf:Description rdf:about="https://ceos.org/ard/metadata-codelists/PFS/NRB">
-		<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-		<skos:inScheme rdf:resource="https://ceos.org/ard/metadata-codelists/PFS"/>
-		<skos:topConceptOf rdf:resource="https://ceos.org/ard/metadata-codelists/PFS"/>
+	<skos:Concept rdf:about="https://ceos.org/ard/metadata-codelists/PFS/SR/5.0.1">
+		<skos:inScheme rdf:resource="https://ceos.org/ard/concepts/concept_scheme/PFS"/>
+		<skos:prefLabel xml:lang="en">Surface Reflectance 5.0.1</skos:prefLabel>
+		<skos:definition xml:lang="en">The Surface Reflectance Product Family Specification ...</skos:definition>
+		<skos:broader rdf:resource="https://ceos.org/ard/metadata-codelists/PFS/SR"/>
+		<rdfs:isDefinedBy rdf:resource="https://ceos.org/ard/files/PFS/SR/v5.0.1/CEOS-ARD_Product_Family_Specification_Surface_Reflectance-v5.0.1.pdf"/>
+		<rdfs:seeAlso rdf:resource="https://ceos.org/ard/files/PFS/SR/v5.0.1/CEOS-ARD_Product_Family_Specification_Surface_Reflectance-v5.0.1.pdf"/>
+	</skos:Concept>
+
+	<skos:Concept rdf:about="https://ceos.org/ard/metadata-codelists/PFS/NRB">
+		<skos:inScheme rdf:resource="https://ceos.org/ard/concepts/concept_scheme/PFS"/>
 		<skos:prefLabel xml:lang="en">Normalised Radar Backscatter</skos:prefLabel>
-		<skos:definition xml:lang="en">The SNormalised Radar Backscatter Family ...</skos:definition>
+		<skos:notation xml:lang="en">NRB</skos:notation>
+		<skos:definition xml:lang="en">The Normalised Radar Backscatter Family Specification ...</skos:definition>
 		<skos:broader rdf:resource="https://ceos.org/ard/metadata-codelists/PFS"/>
-	</rdf:Description>
+	</skos:Concept>
+	
+	<skos:Concept rdf:about="https://ceos.org/ard/metadata-codelists/PFS/NRB/5.0">
+	    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+		<skos:inScheme rdf:resource="https://ceos.org/ard/concepts/concept_scheme/PFS"/>
+		<skos:prefLabel xml:lang="en">Normalised Radar Backscatter 5.0</skos:prefLabel>
+		<skos:definition xml:lang="en">The Normalised Radar Backscatter Family Specification ...</skos:definition>
+		<skos:broader rdf:resource="https://ceos.org/ard/metadata-codelists/PFS/NRB"/>
+		<rdfs:isDefinedBy rdf:resource="https://ceos.org/ard/files/PFS/NRB/v5.0/CARD4L-PFS_Normalised_Radar_Backscatter-v5.0.pdf"/>
+		<rdfs:seeAlso rdf:resource="https://ceos.org/ard/files/PFS/NRB/v5.0/CARD4L-PFS_Normalised_Radar_Backscatter-v5.0.pdf"/>
+	</skos:Concept>
+	
+	<skos:Concept rdf:about="https://ceos.org/ard/metadata-codelists/PFS/NRB/5.5">
+		<skos:inScheme rdf:resource="https://ceos.org/ard/concepts/concept_scheme/PFS"/>
+		<skos:prefLabel xml:lang="en">Normalised Radar Backscatter 5.5</skos:prefLabel>
+		<skos:definition xml:lang="en">The Normalised Radar Backscatter Family Specification ...</skos:definition>
+		<skos:broader rdf:resource="https://ceos.org/ard/metadata-codelists/PFS/NRB"/>
+		<rdfs:isDefinedBy rdf:resource="https://ceos.org/ard/files/PFS/NRB/v5.5/CARD4L-PFS_NRB_v5.5.pdf"/>
+		<rdfs:seeAlso rdf:resource="https://ceos.org/ard/files/PFS/NRB/v5.5/CARD4L-PFS_NRB_v5.5.pdf"/>
+	</skos:Concept>
+
 </rdf:RDF>
 ```
 
