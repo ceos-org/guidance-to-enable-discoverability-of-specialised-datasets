@@ -2,3 +2,4 @@ jupyter-book<2
 playwright
 sphinxcontrib.mermaid
 pandas
+sphinx_book_theme==1.1.4 # version >=1.1.5 seems to mess up the TOC in the right hand side menu
