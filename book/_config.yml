@@ -37,5 +37,6 @@ bibtex_bibfiles:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: false
+  show_toc_level: 3
 #  use_repository_button: true
 
